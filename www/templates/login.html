@@ -1,0 +1,21 @@
+<ion-view title="Login">
+    <ion-content overflow-scroll="true" padding="'true'" style="background: url(img/dMExnQPTTXebeScer3zE_xl_7107_TP-jody-horton-finedininglovers.jpg) no-repeat center;" class="has-header">
+        <h1>Recipeic</h1>
+        <form class="list">
+            <div class="spacer" style="height: 100px;"></div>
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Username</span>
+                    <input type="text" ng-model="username" placeholder="">
+                </label>{{ username }}
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" ng-model="password" placeholder="">
+                </label>
+            </ion-list>
+            <div class="spacer" style="height: 40px;"></div>
+            <button class="button button-positive button-block " ng-click="clickLogin(username, password)">Log in</button>
+            <a href="#/signup" class="button button-positive button-clear button-block ">Or create an account</a>
+        </form>
+    </ion-content>
+</ion-view>

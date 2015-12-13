@@ -1,0 +1,42 @@
+<ion-view title="Recipic">
+    <ion-nav-buttons side="right">
+        <button class="button icon-left ion-plus" ui-sref="menu.createRecipe"></button>
+    </ion-nav-buttons>
+
+    <ion-content overflow-scroll="true" padding="'true'" class="has-header">
+        
+        <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="refresh()">
+        </ion-refresher>
+
+        <div class="list card" ng-repeat="recipe in recipes">
+            <div class="item item-divider">{{ recipe.title }}</div>
+            <div class="item item-body">
+                <div class="image" back-img="{{recipe.image}}" style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; width: 100%; height: auto; background-color: rgb(255, 255, 255);">
+                    <i class="icon ion-image" ng-hide="recipe.image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>&nbsp;
+                </div>
+                <div class="subtitle">
+                    <span class="username">{{recipe.username}}@</span>
+                    <span class="time" am-time-ago="recipe.time"></span>
+                </div>
+                <div>
+                    {{ recipe.content }}
+                </div>
+                <div class="button-bar">
+                    <button class="button button-stable button-block ">Like</button>
+                    <button class="button button-stable button-block ">Comment</button>
+                    <button class="button button-stable button-block ">Share</button>
+                </div>
+            </div>
+        </div>
+
+        <ion-infinite-scroll
+            on-infinite="loadMore()"
+            ng-if="hasMoreData()">
+        </ion-infinite-scroll>
+
+    </ion-content>
+
+
+</ion-view>
