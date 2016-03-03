@@ -18,6 +18,7 @@ angular.module('app', ['ionic','ionic.service.core', 'ionic.service.analytics', 
 
   });
 
+  // TODO: throw new Error('Can't config settings file, please make a config.js (use config.template.js)')
   Parse.initialize(config.PARSE_APP_ID,  config.PARSE_JS_KEY);
 
 });
